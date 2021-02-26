@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="pictures">
+    <ul>
+        {% for x in images %}
+            {%if x.endswith(('.png', '.jpg', '.jpeg')) %}
+        <li>  
+            <img src="{{ url_for('get_image', filename=x)}}"  />
+        </li>
+            {% endif %}
+        {% endfor %}
+     </ul>
+</div>
+{% endblock %}
